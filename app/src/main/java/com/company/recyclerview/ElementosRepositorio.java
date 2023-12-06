@@ -12,30 +12,29 @@ public class ElementosRepositorio {
     }
 
     ElementosRepositorio(){
-        elementos.add(new Elemento("Elemento químico", "Es un átomo con moléculas, aquella sustancia que no puede ser descompuesta mediante una reacción química, en otras más simples. Pueden existir dos átomos de un mismo elemento con características distintas y, en el caso de que estos posean número másico distinto, pertenecen al mismo elemento pero en lo que se conoce como uno de sus isótopos."));
-        elementos.add(new Elemento("Elemento de un conjunto", "En teoría de conjuntos, un elemento o miembro de un conjunto (o familia de conjuntos) es un objeto que forma parte de ese conjunto (o familia)."));
-        elementos.add(new Elemento("Elemento sintético", "En química, un elemento sintético es un elemento químico que no aparece de forma natural en la Tierra, y solo puede ser creado artificialmente."));
-        elementos.add(new Elemento("Elemento algebraico", "En matemáticas, más concretamente en álgebra abstracta y teoría de cuerpos, se dice que un elemento es algebraico sobre un cuerpo si es raíz de algún polinomio con coeficientes en dicho cuerpo. Los elementos algebraicos sobre el cuerpo de los números racionales reciben el nombre de números algebraicos."));
-        elementos.add(new Elemento("Elementos de la naturaleza","Los cuatro o cinco elementos de la naturaleza —normalmente agua, tierra, fuego y aire, a los que se añade la quintaesencia o éter— eran, para muchas doctrinas antiguas, los constituyentes básicos de la materia y explicaban el comportamiento de la naturaleza. El modelo estuvo vigente hasta que la ciencia moderna empezó a desentrañar los elementos y reacciones químicas."));
-        elementos.add(new Elemento("Elemento constructivo","Un elemento constructivo es cada uno de los componentes materiales que integran una obra de construcción. Se suelen clasificar en estructurales y compartimentadores."));
+        elementos.add(new Elemento("Bulbasaur", "Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo."));
+        elementos.add(new Elemento("Ivysaur", "Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras."));
+        elementos.add(new Elemento("Venusaur", "La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol."));
+        elementos.add(new Elemento("Charmander", "Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola."));
+        elementos.add(new Elemento("Charmeleon", "Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras."));
+        elementos.add(new Elemento("Charizard", "Se dice que el fuego de Charizard arde con más fuerza cuantas más duras batallas haya vivido."));
+        elementos.add(new Elemento("Squirtle", "Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble."));
+        elementos.add(new Elemento("Wartortle", "Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón."));
+        elementos.add(new Elemento("Blastoise", "Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón."));
+        elementos.add(new Elemento("Caterpie", "Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos."));
+        elementos.add(new Elemento("Metapod", "Como en este estado solo puede endurecer su coraza, permanece inmóvil a la espera de evolucionar."));
+        elementos.add(new Elemento("Butterfree", "Adora el néctar de las flores. Una pequeña cantidad de polen le basta para localizar prados floridos."));
+        elementos.add(new Elemento("Weedle", "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas."));
+        elementos.add(new Elemento("Kakuna", "Aunque es casi incapaz de moverse, en caso de sentirse amenazado puede envenenar a los enemigos con su aguijón."));
+        elementos.add(new Elemento("Beedrill", "Tiene tres aguijones venenosos, dos en las patas anteriores y uno en la parte baja del abdomen, con los que ataca a sus enemigos una y otra vez."));
     }
 
     List<Elemento> obtener() {
         return elementos;
     }
 
-    void insertar(Elemento elemento, Callback callback){
-        elementos.add(elemento);
-        callback.cuandoFinalice(elementos);
-    }
-
-    void eliminar(Elemento elemento, Callback callback) {
-        elementos.remove(elemento);
-        callback.cuandoFinalice(elementos);
-    }
 
     void actualizar(Elemento elemento, float valoracion, Callback callback) {
-        elemento.valoracion = valoracion;
         callback.cuandoFinalice(elementos);
     }
 }

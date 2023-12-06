@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.company.recyclerview.databinding.FragmentMostrarElementoBinding;
@@ -26,6 +27,15 @@ public class MostrarElementoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ElementosViewModel elementosViewModel = new ViewModelProvider(requireActivity()).get(ElementosViewModel.class);
+
+        elementosViewModel.seleccionado().observe(getViewLifecycleOwner(), new Observer<Elemento>() {
+            @Override
+            public void onChanged(Elemento elemento) {
+                binding.nombre.setText(elemento.nombre);
+                binding.descripcion.setText(elemento.descripcion);
+
+            }
+        });
 
 
     }
